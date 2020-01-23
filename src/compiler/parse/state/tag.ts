@@ -474,16 +474,32 @@ function read_sequence(parser: Parser, done: () => boolean): TemplateNode[] {
 			flush();
 
 			parser.allow_whitespace();
-			const expression = read_expression(parser);
-			parser.allow_whitespace();
-			parser.eat('}', true);
 
-			chunks.push({
-				start: index,
-				end: parser.index,
-				type: 'MustacheTag',
-				expression,
-			});
+			if (parser.eat('@html')) {
+				// {@html content} tag
+				parser.require_whitespace();
+				const expression = read_expression(parser);
+				parser.allow_whitespace();
+				parser.eat('}', true);
+
+				chunks.push({
+					start: index,
+					end: parser.index,
+					type: 'RawMustacheTag',
+					expression,
+				});
+			} else {
+				const expression = read_expression(parser);
+				parser.allow_whitespace();
+				parser.eat('}', true);
+
+				chunks.push({
+					start: index,
+					end: parser.index,
+					type: 'MustacheTag',
+					expression,
+				});
+			}
 
 			current_chunk = {
 				start: parser.index,
