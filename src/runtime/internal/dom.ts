@@ -282,6 +282,15 @@ export function query_selector_all(selector: string, parent: HTMLElement = docum
 	return Array.from(parent.querySelectorAll(selector));
 }
 
+let decode_entities_textarea;
+export function decode_entities(str: string) {
+	if (!decode_entities_textarea) {
+		decode_entities_textarea = element('textarea');
+	}
+	decode_entities_textarea.innerHTML = str;
+	return decode_entities_textarea.innerText;
+}
+
 export class HtmlTag {
 	e: HTMLElement;
 	n: ChildNode[];
