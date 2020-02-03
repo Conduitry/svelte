@@ -144,6 +144,8 @@ export function init(component, options, instance, create_fragment, not_equal, p
 	// `false` as a special case of no DOM component
 	$$.fragment = create_fragment ? create_fragment($$.ctx) : false;
 
+	set_current_component(null);
+
 	if (options.target) {
 		if (options.hydrate) {
 			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
