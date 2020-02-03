@@ -32,30 +32,32 @@ export default function ssr(
 		component.stylesheet.render(options.filename, true);
 
 	const reactive_stores = component.vars.filter(variable => variable.name[0] === '$' && variable.name[1] !== '$');
-	const reactive_store_values = reactive_stores
-		.map(({ name }) => {
-			const store_name = name.slice(1);
-			const store = component.var_lookup.get(store_name);
-			if (store && store.hoistable) return null;
 
-			const assignment = b`${name} = @get_store_value(${store_name});`;
+	const reactive_store_declarations = reactive_stores.map(variable => {
+		const $name = variable.name;
+		const name = $name.slice(1);
 
-			return component.compile_options.dev
-				? b`@validate_store(${store_name}, '${store_name}'); ${assignment}`
-				: assignment;
-		})
-		.filter(Boolean);
+		const store = component.var_lookup.get(name);
+		if (store && (store.reassigned || store.export_name)) {
+			const unsubscribe = `$$unsubscribe_${name}`;
+			const subscribe = `$$subscribe_${name}`;
 
-	component.rewrite_props(({ name }) => {
-		const value = `$${name}`;
-
-		let insert = b`${value} = @get_store_value(${name})`;
-		if (component.compile_options.dev) {
-			insert = b`@validate_store(${name}, '${name}'); ${insert}`;
+			return b`let ${$name}, ${unsubscribe} = @noop, ${subscribe} = () => (${unsubscribe}(), ${unsubscribe} = @subscribe(${name}, $$value => ${$name} = $$value), ${name})`;
 		}
 
-		return insert;
+		return b`let ${$name};`;
 	});
+
+	component.rewrite_props(() => []);
+
+	const reactive_store_subscriptions = reactive_stores
+		.map(({ name }) => b`
+			${component.compile_options.dev && b`@validate_store(${name.slice(1)}, '${name.slice(1)}');`}
+			@subscribe(${name.slice(1)}, $$value => ${name} = $$value);
+		`);
+
+	const reactive_store_unsubscribers = reactive_stores
+		.map(({ name }) => b`${`$$unsubscribe_${name.slice(1)}`}();`);
 
 	const instance_javascript = component.extract_javascript(component.ast.instance);
 
@@ -113,31 +115,25 @@ export default function ssr(
 			do {
 				$$settled = true;
 
-				${reactive_store_values}
-
 				${reactive_declarations}
 
 				$$rendered = ${literal};
 			} while (!$$settled);
 
+			${reactive_store_unsubscribers}
+
 			return $$rendered;
 		`
 		: b`
-			${reactive_store_values}
-
 			${reactive_declarations}
+
+			${reactive_store_unsubscribers}
 
 			return ${literal};`;
 
 	const blocks = [
-		...reactive_stores.map(({ name }) => {
-			const store_name = name.slice(1);
-			const store = component.var_lookup.get(store_name);
-			if (store && store.hoistable) {
-				return b`let ${name} = @get_store_value(${store_name});`;
-			}
-			return b`let ${name};`;
-		}),
+		...reactive_store_declarations,
+		...reactive_store_subscriptions,
 
 		instance_javascript,
 		...parent_bindings,
