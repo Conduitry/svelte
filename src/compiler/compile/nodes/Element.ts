@@ -98,6 +98,14 @@ const react_attributes = new Map([
 	['htmlFor', 'for']
 ]);
 
+const interactive_elements = new Set([
+	'a', 'button', 'input', 'select', 'textarea'
+]);
+
+const noninteractive_roles = new Set([
+	'article', 'banner', 'complementary', 'img', 'listitem', 'main', 'region', 'tooltip'
+]);
+
 function get_namespace(parent: Element, element: Element, explicit_namespace: string) {
 	const parent_element = parent.find_nearest(/^Element/);
 
@@ -594,6 +602,18 @@ export default class Element extends Node {
 					code: 'a11y-structure',
 					message: 'A11y: <figcaption> must be first or last child of <figure>'
 				});
+			}
+		}
+
+		if (interactive_elements.has(this.name)) {
+			if (attribute_map.has('role')) {
+				const roleValue = this.attributes.find(a => a.name === 'role').get_static_value().toString();
+				if (noninteractive_roles.has(roleValue)) {
+					component.warn(this, {
+						code: 'a11y-no-interactive-element-to-noninteractive-role',
+						message: `A11y: <${this.name}> cannot have role ${roleValue}`
+					});
+				}
 			}
 		}
 	}
