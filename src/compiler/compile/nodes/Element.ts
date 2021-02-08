@@ -607,11 +607,11 @@ export default class Element extends Node {
 
 		if (interactive_elements.has(this.name)) {
 			if (attribute_map.has('role')) {
-				const roleValue = this.attributes.find(a => a.name === 'role').get_static_value().toString();
-				if (noninteractive_roles.has(roleValue)) {
+				const role_value = attribute_map.get('role').get_static_value();
+				if (noninteractive_roles.has(role_value)) {
 					component.warn(this, {
 						code: 'a11y-no-interactive-element-to-noninteractive-role',
-						message: `A11y: <${this.name}> cannot have role ${roleValue}`
+						message: `A11y: <${this.name}> should not have non-interactive role "${role_value}"`
 					});
 				}
 			}

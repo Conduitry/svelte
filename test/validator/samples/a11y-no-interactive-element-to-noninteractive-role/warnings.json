@@ -6,7 +6,7 @@
             "column": 38,
             "line": 2
         },
-        "message": "A11y: <a> cannot have role article",
+        "message": "A11y: <a> should not have non-interactive role \"article\"",
         "pos": 11,
         "start": {
             "character": 11,
@@ -21,7 +21,7 @@
             "column": 37,
             "line": 3
         },
-        "message": "A11y: <a> cannot have role banner",
+        "message": "A11y: <a> should not have non-interactive role \"banner\"",
         "pos": 50,
         "start": {
             "character": 50,
@@ -36,7 +36,7 @@
             "column": 44,
             "line": 4
         },
-        "message": "A11y: <a> cannot have role complementary",
+        "message": "A11y: <a> should not have non-interactive role \"complementary\"",
         "pos": 88,
         "start": {
             "character": 88,
@@ -51,7 +51,7 @@
             "column": 34,
             "line": 5
         },
-        "message": "A11y: <a> cannot have role img",
+        "message": "A11y: <a> should not have non-interactive role \"img\"",
         "pos": 133,
         "start": {
             "character": 133,
@@ -66,7 +66,7 @@
             "column": 39,
             "line": 6
         },
-        "message": "A11y: <a> cannot have role listitem",
+        "message": "A11y: <a> should not have non-interactive role \"listitem\"",
         "pos": 168,
         "start": {
             "character": 168,
@@ -81,7 +81,7 @@
             "column": 35,
         "line": 7
         },
-        "message": "A11y: <a> cannot have role main",
+        "message": "A11y: <a> should not have non-interactive role \"main\"",
         "pos": 208,
         "start": {
             "character": 208,
@@ -96,7 +96,7 @@
             "column": 37,
             "line": 8
         },
-        "message": "A11y: <a> cannot have role region",
+        "message": "A11y: <a> should not have non-interactive role \"region\"",
         "pos": 244,
         "start": {
             "character": 244,
@@ -111,7 +111,7 @@
             "column": 38,
             "line": 9
         },
-        "message": "A11y: <a> cannot have role tooltip",
+        "message": "A11y: <a> should not have non-interactive role \"tooltip\"",
         "pos": 282,
         "start": {
             "character": 282,
@@ -126,7 +126,7 @@
             "column": 38,
             "line": 13
         },
-        "message": "A11y: <button> cannot have role article",
+        "message": "A11y: <button> should not have non-interactive role \"article\"",
         "pos": 376,
         "start": {
             "character": 376,
@@ -141,7 +141,7 @@
             "column": 37,
             "line": 14
         },
-        "message": "A11y: <button> cannot have role banner",
+        "message": "A11y: <button> should not have non-interactive role \"banner\"",
         "pos": 415,
         "start": {
             "character": 415,
@@ -156,7 +156,7 @@
             "column": 44,
             "line": 15
         },
-        "message": "A11y: <button> cannot have role complementary",
+        "message": "A11y: <button> should not have non-interactive role \"complementary\"",
         "pos": 453,
         "start": {
             "character": 453,
@@ -171,7 +171,7 @@
             "column": 34,
             "line": 16
         },
-        "message": "A11y: <button> cannot have role img",
+        "message": "A11y: <button> should not have non-interactive role \"img\"",
         "pos": 498,
         "start": {
             "character": 498,
@@ -186,7 +186,7 @@
             "column": 39,
             "line": 17
         },
-        "message": "A11y: <button> cannot have role listitem",
+        "message": "A11y: <button> should not have non-interactive role \"listitem\"",
         "pos": 533,
         "start": {
             "character": 533,
@@ -201,7 +201,7 @@
             "column": 35,
             "line": 18
         },
-        "message": "A11y: <button> cannot have role main",
+        "message": "A11y: <button> should not have non-interactive role \"main\"",
         "pos": 573,
         "start": {
             "character": 573,
@@ -216,7 +216,7 @@
             "column": 37,
             "line": 19
         },
-        "message": "A11y: <button> cannot have role region",
+        "message": "A11y: <button> should not have non-interactive role \"region\"",
         "pos": 609,
         "start": {
             "character": 609,
@@ -231,7 +231,7 @@
             "column": 38,
             "line": 20
         },
-        "message": "A11y: <button> cannot have role tooltip",
+        "message": "A11y: <button> should not have non-interactive role \"tooltip\"",
         "pos": 647,
         "start": {
             "character": 647,
@@ -246,7 +246,7 @@
             "column": 23,
             "line": 24
         },
-        "message": "A11y: <input> cannot have role article",
+        "message": "A11y: <input> should not have non-interactive role \"article\"",
         "pos": 740,
         "start": {
             "character": 740,
@@ -261,7 +261,7 @@
             "column": 22,
             "line": 25
         },
-        "message": "A11y: <input> cannot have role banner",
+        "message": "A11y: <input> should not have non-interactive role \"banner\"",
         "pos": 764,
         "start": {
             "character": 764,
@@ -276,7 +276,7 @@
             "column": 29,
             "line": 26
         },
-        "message": "A11y: <input> cannot have role complementary",
+        "message": "A11y: <input> should not have non-interactive role \"complementary\"",
         "pos": 787,
         "start": {
             "character": 787,
@@ -291,7 +291,7 @@
             "column": 19,
             "line": 27
         },
-        "message": "A11y: <input> cannot have role img",
+        "message": "A11y: <input> should not have non-interactive role \"img\"",
         "pos": 817,
         "start": {
             "character": 817,
@@ -306,7 +306,7 @@
             "column": 24,
             "line": 28
         },
-        "message": "A11y: <input> cannot have role listitem",
+        "message": "A11y: <input> should not have non-interactive role \"listitem\"",
         "pos": 837,
         "start": {
             "character": 837,
@@ -321,7 +321,7 @@
             "column": 20,
             "line": 29
         },
-        "message": "A11y: <input> cannot have role main",
+        "message": "A11y: <input> should not have non-interactive role \"main\"",
         "pos": 862,
         "start": {
             "character": 862,
@@ -336,7 +336,7 @@
             "column": 22,
             "line": 30
         },
-        "message": "A11y: <input> cannot have role region",
+        "message": "A11y: <input> should not have non-interactive role \"region\"",
         "pos": 883,
         "start": {
             "character": 883,
@@ -351,7 +351,7 @@
             "column": 23,
             "line": 31
         },
-        "message": "A11y: <input> cannot have role tooltip",
+        "message": "A11y: <input> should not have non-interactive role \"tooltip\"",
         "pos": 906,
         "start": {
             "character": 906,
@@ -366,7 +366,7 @@
             "column": 24,
             "line": 35
         },
-        "message": "A11y: <select> cannot have role article",
+        "message": "A11y: <select> should not have non-interactive role \"article\"",
         "pos": 970,
         "start": {
             "character": 970,
@@ -381,7 +381,7 @@
             "column": 23,
             "line": 36
         },
-        "message": "A11y: <select> cannot have role banner",
+        "message": "A11y: <select> should not have non-interactive role \"banner\"",
         "pos": 995,
         "start": {
             "character": 995,
@@ -396,7 +396,7 @@
             "column": 30,
             "line": 37
         },
-        "message": "A11y: <select> cannot have role complementary",
+        "message": "A11y: <select> should not have non-interactive role \"complementary\"",
         "pos": 1019,
         "start": {
             "character": 1019,
@@ -411,7 +411,7 @@
             "column": 20,
             "line": 38
         },
-        "message": "A11y: <select> cannot have role img",
+        "message": "A11y: <select> should not have non-interactive role \"img\"",
         "pos": 1050,
         "start": {
         "character": 1050,
@@ -426,7 +426,7 @@
             "column": 25,
             "line": 39
         },
-        "message": "A11y: <select> cannot have role listitem",
+        "message": "A11y: <select> should not have non-interactive role \"listitem\"",
         "pos": 1071,
         "start": {
             "character": 1071,
@@ -441,7 +441,7 @@
             "column": 21,
             "line": 40
         },
-        "message": "A11y: <select> cannot have role main",
+        "message": "A11y: <select> should not have non-interactive role \"main\"",
         "pos": 1097,
         "start": {
             "character": 1097,
@@ -456,7 +456,7 @@
             "column": 23,
             "line": 41
         },
-        "message": "A11y: <select> cannot have role region",
+        "message": "A11y: <select> should not have non-interactive role \"region\"",
         "pos": 1119,
         "start": {
             "character": 1119,
@@ -471,7 +471,7 @@
             "column": 24,
             "line": 42
         },
-        "message": "A11y: <select> cannot have role tooltip",
+        "message": "A11y: <select> should not have non-interactive role \"tooltip\"",
         "pos": 1143,
         "start": {
             "character": 1143,
@@ -486,7 +486,7 @@
             "column": 26,
             "line": 46
         },
-        "message": "A11y: <textarea> cannot have role article",
+        "message": "A11y: <textarea> should not have non-interactive role \"article\"",
         "pos": 1211,
         "start": {
             "character": 1211,
@@ -501,7 +501,7 @@
             "column": 25,
             "line": 47
         },
-        "message": "A11y: <textarea> cannot have role banner",
+        "message": "A11y: <textarea> should not have non-interactive role \"banner\"",
         "pos": 1238,
         "start": {
             "character": 1238,
@@ -516,7 +516,7 @@
             "column": 32,
             "line": 48
         },
-        "message": "A11y: <textarea> cannot have role complementary",
+        "message": "A11y: <textarea> should not have non-interactive role \"complementary\"",
         "pos": 1264,
         "start": {
             "character": 1264,
@@ -531,7 +531,7 @@
             "column": 22,
             "line": 49
         },
-        "message": "A11y: <textarea> cannot have role img",
+        "message": "A11y: <textarea> should not have non-interactive role \"img\"",
         "pos": 1297,
         "start": {
             "character": 1297,
@@ -546,7 +546,7 @@
             "column": 27,
             "line": 50
         },
-        "message": "A11y: <textarea> cannot have role listitem",
+        "message": "A11y: <textarea> should not have non-interactive role \"listitem\"",
         "pos": 1320,
         "start": {
             "character": 1320,
@@ -561,7 +561,7 @@
             "column": 23,
             "line": 51
         },
-        "message": "A11y: <textarea> cannot have role main",
+        "message": "A11y: <textarea> should not have non-interactive role \"main\"",
         "pos": 1348,
         "start": {
             "character": 1348,
@@ -576,7 +576,7 @@
             "column": 25,
             "line": 52
         },
-        "message": "A11y: <textarea> cannot have role region",
+        "message": "A11y: <textarea> should not have non-interactive role \"region\"",
         "pos": 1372,
         "start": {
             "character": 1372,
@@ -591,7 +591,7 @@
             "column": 26,
             "line": 53
         },
-        "message": "A11y: <textarea> cannot have role tooltip",
+        "message": "A11y: <textarea> should not have non-interactive role \"tooltip\"",
         "pos": 1398,
         "start": {
             "character": 1398,
